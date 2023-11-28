@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo Visual</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        /* Estilos CSS específicos para Estilo Visual */
+        body {
+            background-color: LightCoral; /* Cambio de color de fondo a LightCoral */
+        padding-top: 50px;
+    }
+        .container {
+            text-align: center;
+            padding: 30px;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card-img-top {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="d-flex align-items-center"> <!-- Contenedor para alinear elementos verticalmente -->
+                    <!--img src="imag/visual-learning.jpg" alt="Estilo Visual" style="width: 60px; height: 60px; margin-right: 10px;" -->
+                    <span style="font-size: 25px;">Estilos de Aprendizaje</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class "collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="auditivo.html">Estilo Auditivo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kinestesico.html">Estilo Kinestésico</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="container mt-5"> <!-- Agregado margen superior -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <img src="imag/visual-learning.jpg" class="card-img-top mb-4" alt="Estilo Visual"> <!-- Agregado margen inferior -->
+                    </div>
+                </div>
+                <div class="col-md-6 my-4"> <!-- Ajusta el valor de my-4 según tus preferencias -->
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h2 class="card-title">Estilo Visual</h2>
+                            <p class="card-text">Este es el contenido relacionado con el estilo de aprendizaje visual.</p>
+                            <!-- Puedes agregar aquí actividades, recursos multimedia y cualquier otro contenido relevante. -->
+                            <form>
+                                <h3>Evaluación de actividades de Estilo Visual</h3>
+                                <p>¿Cuánto te ayudaron las actividades relacionadas con el estilo visual?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="evaluacion_visual" id="muy_poco" value="muy_poco">
+                                    <label class="form-check-label" for="muy_poco">Muy poco</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="evaluacion_visual" id="poco" value="poco">
+                                    <label class="form-check-label" for="poco">Poco</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="evaluacion_visual" id="moderadamente" value="moderadamente">
+                                    <label class="form-check-label" for="moderadamente">Moderadamente</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="evaluacion_visual" id="mucho" value="mucho">
+                                    <label class="form-check-label" for ="mucho">Mucho</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="evaluacion_visual" id="muchisimo" value="muchisimo">
+                                    <label class="form-check-label" for="muchisimo">Muchísimo</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enviar evaluación</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

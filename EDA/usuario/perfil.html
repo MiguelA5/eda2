@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            text-align: center;
+            border: 1px solid #05f89b;
+            background-color: #f0f0f0;
+            height: 80%;
+        }
+        .card-header {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .btn-primary {
+            background-color: #007BFF;
+            border: none;
+        }
+        .card-body {
+            font-size: 1.25rem;
+        }
+        .profile-details p {
+            margin-bottom: 10px; /* Agregar margen inferior a los elementos de texto */
+        }
+    </style>
+</head>
+<body>
+    <?php
+    // Conexión a la base de datos (debes configurar esto)
+    $conexion = mysqli_connect("tu_host", "tu_usuario", "tu_contrasena", "tu_base_de_datos");
+
+    if (!$conexion) {
+        die("Error en la conexión a la base de datos: " . mysqli_connect_error());
+    }
+
+    // Consulta SQL para obtener los datos del usuario por su ID (cambia 1 por el ID del usuario deseado)
+    $sql = "SELECT * FROM Usuarios WHERE ID = 1";
+    $resultado = mysqli_query($conexion, $sql);
+
+    if (mysqli_num_rows($resultado) == 1) {
+        $fila = mysqli_fetch_assoc($resultado);
+        $nombreUsuario = $fila['NombreUsuario'];
+        $correo = $fila['Correo'];
+        $fechaNacimiento = $fila['FechaNacimiento'];
+        $sexo = $fila['Sexo'];
+        $foto = $fila['Foto'];
+        
+        // Define un arreglo de colores
+        $colores = array("#007BFF", "#FF5733", "#33FF57", "#5733FF");
+        // Asigna un color diferente a cada usuario basado en su ID
+        $colorUsuario = $colores[$fila['ID'] % count($colores)];
+    }
+    mysqli_close($conexion);
+    ?>
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="card" style="border: 1px solid <?php echo $colorUsuario; ?>;">
+                <div class="card-header" style="background-color: <?php echo $colorUsuario; ?>;">
+                    <h1 style="color: #ffffff;">Perfil de Usuario</h1>
+                </div>
+                <div class="card-body">
+                    <div style="margin-bottom: 20px;">
+                        <img src="<?php echo $foto; ?>" alt="Foto de Perfil" width="150" height="150">
+                    </div>
+                    <div class="profile-details">
+                        <h5 class="card-title">Nombre de Usuario:</h5>
+                        <p><?php echo $nombreUsuario; ?></p>
+                        <h5 class="card-title">Correo Electrónico:</h5>
+                        <p><?php echo $correo; ?></p>
+                        <h5 class="card-title">Fecha de Nacimiento:</h5>
+                        <p><?php echo $fechaNacimiento; ?></p>
+                        <h5 class="card-title">Sexo:</h5>
+                        <p><?php echo $sexo; ?></p>
+                    </div>
+                </div>
+                
+                <div class="card-footer">
+                    <a href="editar_perfil.html" class="btn btn-primary">Editar Perfil</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Actividades para Estilo Visual</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-4">Actividades para Estilo Visual</h1>
+        <?php
+        // Conexión a la base de datos (reemplaza con tus credenciales)
+        $servername = "localhost";
+        $username = "tu_usuario";
+        $password = "tu_contraseña";
+        $database = "tu_base_de_datos";
+
+        $conn = new mysqli($servername, $username, $password, $database);
+
+        if ($conn->connect_error) {
+            die("Conexión fallida: " . $conn->connect_error);
+        }
+
+        // Suponiendo que el usuario está autenticado y tiene un ID de usuario
+        $usuarioID = 1; // Reemplaza con el ID del usuario autenticado
+
+        // Consulta para obtener las actividades para el estilo visual que el profesor envió al usuario
+        $sql = "SELECT a.ID, a.NombreActividad, a.Descripcion
+                FROM Actividades a
+                INNER JOIN RegistrosActividades ra ON a.ID = ra.ActividadID
+                WHERE a.EstiloAprendizajeID = 1
+                AND ra.UsuarioID = $usuarioID";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="card mt-3">';
+                echo '<div class="card-body">';
+                echo "<h5 class='card-title'>" . $row["NombreActividad"] . "</h5>";
+                echo "<p class='card-text'><button class='btn btn-primary btn-sm' id='toggleBtn_" . $row["ID"] . "'>Mostrar/ocultar descripción</button></p>";
+                echo "<p class='card-text'>" . "<button class='btn btn-primary btn-sm' onclick='toggleDescription(" . $row["ID"] , ")'>Mostrar/ocultar descripción</button>" . "</p>";
+                echo '</div>';
+                echo '</div>';
+            }
+        } else {
+            echo "<p>No se encontraron actividades para el estilo visual.</p>";
+        }
+
+        $conn->close();
+        ?>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Función para mostrar u ocultar la descripción
+               // Función para mostrar u ocultar la descripción
+               function toggleDescription(activityID) {
+            var description = document.getElementById("description_" + activityID);
+
+            if (description.style.display === "none" || description.style.display === "") {
+                description.style.display = "block";
+            } else {
+                description.style.display = "none";
+            }
+        }
+
+   
+    <?php
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "document.getElementById('toggleBtn_" . $row["ID"] . "').addEventListener('click', function() { toggleDescription(" . $row["ID"] . "); });";
+        }
+    }
+    ?>
+</script>
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Profesor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+           body {
+            font-family: Arial, sans-serif;
+            background: url('imag/estilo.jpg') center/cover no-repeat;
+            background-size: cover; /* Corrección aquí */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background: rgba(0, 250, 196, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: #00060c;
+            display: inline;
+            padding: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="email"]:focus {
+            border: 2px solid #0056b3;
+        }
+
+        button {
+            background: linear-gradient(to bottom, #006400, #003300);
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background: linear-gradient(to bottom, #003300, #001a00);
+        }
+
+        .form-control {
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+        }
+
+        .form-control:focus {
+            border: 2px solid #0056b3;
+        }
+
+        .file-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center">Registro de Profesor</h2>
+        <form id="registro-profesor-form" action="registro_profesor.php" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">
+                    <i class="fas fa-user"></i> Nombre de usuario:
+                </label>
+                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="user@.com" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="correo" class="form-label">
+                    <i class="fas fa-envelope"></i> Correo Electrónico:
+                </label>
+                <input type="email" id="correo" name="correo" class="form-control" placeholder="tucorreo@example.com" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="contrasena" class="form-label">
+                    <i class="fas fa-lock"></i> Contraseña:
+                </label>
+                <input type="password" id="contrasena" name="contrasena" class="form-control" placeholder="Ejemplo: 123456" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="file-label">
+                    <i class="fas fa-image"></i> Imagen de perfil (profesor.jpg):
+                </label>
+                <input type="file" id="imagen_perfil" name="imagen_perfil" class="form-control" accept="image/*">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

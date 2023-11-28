@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cuestionario de Estilo de Aprendizaje</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        form ol {
+            list-style-type: none;
+            padding: 0;
+        }
+        form li {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+        }
+        input[type="button"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 text-center">Cuestionario de Estilo de Aprendizaje</h1>
+        <form id="quizForm">
+            <ol>
+                <!-- Agrega aquí las preguntas del cuestionario -->
+            </ol>
+            <div class="text-center">
+                <button class="btn btn-primary" onclick="calcularResultados()">Calcular Resultados</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Resultados -->
+    <div class="container mt-4">
+        <h2>Resultados</h2>
+        <div>
+            <canvas id="resultados-chart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        function calcularResultados() {
+            // Obtener las respuestas
+            var respuestas = [];
+            for (var i = 1; i <= 40; i++) {
+                var pregunta = document.querySelector('input[name="q' + i + '"]:checked');
+                if (pregunta) {
+                    respuestas.push(pregunta.value);
+                }
+            }
+
+            // Sumar las respuestas por canal perceptual
+            var visual = 0;
+            var auditivo = 0;
+            var cinestesico = 0;
+            for (var j = 0; j < respuestas.length; j++) {
+                if (respuestas[j] === "A") {
+                    visual++;
+                } else if (respuestas[j] === "B") {
+                    auditivo++;
+                } else if (respuestas[j] === "C") {
+                    cinestesico++;
+                }
+            }
+
+            // Mostrar los resultados
+            var resultadosDiv = document.getElementById("resultados-chart");
+            
+            var visualData = {
+                label: 'Estilo Visual',
+                data: [visual],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            };
+
+            var auditivoData = {
+                label: 'Estilo Auditivo',
+                data: [auditivo],
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            };
+
+            var cinestesicoData = {
+                label: 'Estilo Cinestésico',
+                data: [cinestesico],
+                backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                borderColor: 'rgba(255, 206, 86, 1)',
+                borderWidth: 1
+            };
+
+            var chartData = {
+                labels: ['Resultados'],
+                datasets: [visualData, auditivoData, cinestesicoData]
+            };
+
+            var chartOptions = {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            };
+
+            new Chart(resultadosDiv, {
+                type: 'bar',
+                data: chartData,
+                options: chartOptions
+            });
+        }
+    </script>
+</body>
+</html>

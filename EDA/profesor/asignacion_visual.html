@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignación de Estilo Visual</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        /* Estilos CSS personalizados para estilo visual */
+        body {
+            background-color: #0E6251; /* Color de fondo del cuerpo de la página para visuales */
+        }
+
+        .container {
+            background-color: rgb(26, 188, 156); /* Color de fondo del contenedor para visuales */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        /* Estilos comunes para todos los estilos */
+        .mb-3 {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .lead {
+            font-size: 1.2rem;
+        }
+
+        .custom-textarea {
+            resize: vertical;
+        }
+
+        .custom-btn {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .custom-btn:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .custom-select {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Asignación de Estilo Visual</h1>
+        <p class="lead">Completa la asignación relacionada con el estilo de aprendizaje visual.</p>
+
+        <form action="procesar_asignacion.php" method="post">
+            <div class="mb-3">
+                <label for="usuarios" class="form-label">Selecciona un alumno:</label>
+                <select id="usuarios" name="usuarios" class="form-select custom-select">
+                    <!-- Las opciones de usuarios se cargarán dinámicamente desde procesar_asignacion.php -->
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="actividades" class="form-label">Selecciona una actividad:</label>
+                <select id="actividades" name="actividades" class="form-select custom-select" required>
+                    <!-- Las opciones de actividades se cargarán dinámicamente desde procesar_asignacion.php -->
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="respuesta" class="form-label">Tu Respuesta para la Asignación Visual:</label>
+                <textarea id="respuesta" name="respuesta" rows="5" class="form-control custom-textarea" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">¿Te gustó esta asignación?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gusto" id="siGusto" value="si" required>
+                    <label class="form-check-label" for="siGusto">Sí</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gusto" id="noGusto" value="no" required>
+                    <label class="form-check-label" for="noGusto">No</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">¿En qué podemos mejorar?</label>
+                <textarea id="mejorar" name="mejorar" rows="3" class="form-control custom-textarea"></textarea>
+            </div>
+
+            <input type="hidden" name="asignacion" value="visual">
+            <button type="submit" class="btn btn-primary custom-btn">Enviar Respuesta Visual</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

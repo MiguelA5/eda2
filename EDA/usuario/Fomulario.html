@@ -1,0 +1,368 @@
+<head>
+    <title>Cuestionario de Estilo de Aprendizaje</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        form ol {
+            list-style-type: none;
+            padding: 0;
+        }
+        form li {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+        }
+        input[type="button"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 text-center">Cuestionario de Estilo de Aprendizaje</h1>
+        <form id="quizForm">
+            <ol>
+            <li>
+                <p>1. ¿Cuál de las siguientes actividades disfrutas más?</p>
+                <label><input type="radio" name="q1" value="B"> a) Escuchar música</label>
+                <label><input type="radio" name="q1" value="C"> b) Ver películas</label>
+                <label><input type="radio" name="q1" value="A"> c) Bailar con buena música</label>
+            </li>
+            <li>
+                <p>2. ¿Qué programa de televisión prefieres?</p>
+                <label><input type="radio" name="q2" value="A"> a) Reportajes de descubrimientos y lugares</label>
+                <label><input type="radio" name="q2" value="C"> b) Cómico y de entretenimiento</label>
+                <label><input type="radio" name="q2" value="B"> c) Noticias del mundo</label>
+            </li>
+            <li>
+                <p>3. Cuando conversas con otra persona, tú:</p>
+                <label><input type="radio" name="q3" value="B"> a) La escuchas atentamente</label>
+                <label><input type="radio" name="q3" value="A"> b) La observas</label>
+                <label><input type="radio" name="q3" value="C"> c) Tiendes a tocarla</label>
+            </li>
+            <li>
+                <p>4. Si pudieras adquirir uno de los siguientes artículos, ¿cuál elegirías?</p>
+                <label><input type="radio" name="q4" value="C"> a) Un jacuzzi</label>
+                <label><input type="radio" name="q4" value="B"> b) Un estéreo</label>
+                <label><input type="radio" name="q4" value="A"> c) Un televisor</label>
+            </li>
+            <li>
+                <p>5. ¿Qué prefieres hacer un sábado por la tarde?</p>
+                <label><input type="radio" name="q5" value="C"> a) Quedarte en casa</label>
+                <label><input type="radio" name="q5" value="B"> b) Ir a un concierto</label>
+                <label><input type="radio" name="q5" value="A"> c) Ir al cine</label>
+            </li>
+            <li>
+                <p>6. ¿Qué tipo de exámenes se te facilitan más?</p>
+                <label><input type="radio" name="q6" value="B"> a) Examen oral</label>
+                <label><input type="radio" name="q6" value="A"> b) Examen escrito</label>
+                <label><input type="radio" name="q6" value="C"> c) Examen de opción múltiple</label>
+            </li>
+            <li>
+                <p>7. ¿Cómo te orientas más fácilmente?</p>
+                <label><input type="radio" name="q7" value="A"> a) Mediante el uso de un mapa</label>
+                <label><input type="radio" name="q7" value="B"> b) Pidiendo indicaciones</label>
+                <label><input type="radio" name="q7" value="C"> c) A través de la intuición</label>
+            </li>
+            <li>
+                <p>8. ¿En qué prefieres ocupar tu tiempo en un lugar de descanso?</p>
+                <label><input type="radio" name="q8" value="B"> a) Pensar</label>
+                <label><input type="radio" name="q8" value="A"> b) Caminar por los alrededores</label>
+                <label><input type="radio" name="q8" value="C"> c) Descansar</label>
+            </li>
+            <li>
+                <p>9. ¿Qué te halaga más?</p>
+                <label><input type="radio" name="q9" value="A"> a) Que te digan que tienes buen aspecto</label>
+                <label><input type="radio" name="q9" value="C"> b) Que te digan que tienes un trato muy agradable</label>
+                <label><input type="radio" name="q9" value="B"> c) Que te digan que tienes una conversación interesante</label>
+            </li>
+            <li>
+                <p>10. ¿Cuál de estos ambientes te atrae más?</p>
+                <label><input type="radio" name="q10" value="C"> a) Uno en el que se sienta un clima agradable</label>
+                <label><input type="radio" name="q10" value="B"> b) Uno en el que se escuchen las olas del mar</label>
+                <label><input type="radio" name="q10" value="A"> c) Uno con una hermosa vista al océano</label>
+            </li>
+            <li>
+                <p>11. ¿De qué manera se te facilita aprender algo?</p>
+                <label><input type="radio" name="q11" value="B"> a) Repitiendo en voz alta</label>
+                <label><input type="radio" name="q11" value="A"> b) Escribiéndolo varias veces</label>
+                <label><input type="radio" name="q11" value="C"> c) Relacionándolo con algo divertido</label>
+            </li>
+            <li>
+                <p>12. ¿A qué evento preferirías asistir?</p>
+                <label><input type="radio" name="q12" value="A"> a) A una reunión social</label>
+                <label><input type="radio" name="q12" value="B"> b) A una exposición de arte</label>
+                <label><input type="radio" name="q12" value="C"> c) A una conferencia</label>
+            </li>
+            <li>
+                <p>13. ¿De qué manera te formas una opinión de otras personas?</p>
+                <label><input type="radio" name="q13" value="C"> a) Por la sinceridad en su voz</label>
+                <label><input type="radio" name="q13" value="A"> b) Por la forma de estrecharte la mano</label>
+                <label><input type="radio" name="q13" value="B"> c) Por su aspecto</label>
+            </li>
+            <li>
+                <p>14. ¿Cómo te consideras?</p>
+                <label><input type="radio" name="q14" value="A"> a) Atlético</label>
+                <label><input type="radio" name="q14" value="B"> b) Intelectual</label>
+                <label><input type="radio" name="q14" value="C"> c) Sociable</label>
+            </li>
+            <li>
+                <p>15. ¿Qué tipo de películas te gustan más?</p>
+                <label><input type="radio" name="q15" value="A"> a) Clásicas</label>
+                <label><input type="radio" name="q15" value="B"> b) De acción</label>
+                <label><input type="radio" name="q15" value="C"> c) De amor</label>
+            </li>
+            <li>
+                <p>16. ¿Cómo prefieres mantenerte en contacto con otra persona?</p>
+                <label><input type="radio" name="q16" value="A"> a) Por correo electrónico</label>
+                <label><input type="radio" name="q16" value="C"> b) Tomando un café juntos</label>
+                <label><input type="radio" name="q16" value="B"> c) Por teléfono</label>
+            </li>
+            <li>
+                <p>17. ¿Cuál de las siguientes frases se identifican más contigo?</p>
+                <label><input type="radio" name="q17" value="C"> a) Me gusta que mi coche se sienta bien al conducirlo</label>
+                <label><input type="radio" name="q17" value="B"> b) Percibo hasta el mas ligero ruido que hace mi coche</label>
+                <label><input type="radio" name="q17" value="A"> c) Es importante que mi coche esté limpio por fuera y por dentro</label>
+            </li>
+            <li>
+                <p>18. ¿Cómo prefieres pasar el tiempo con tu novia o novio?</p>
+                <label><input type="radio" name="q18" value="C"> a) Conversando</label>
+                <label><input type="radio" name="q18" value="A"> b) Acariciándose</label>
+                <label><input type="radio" name="q18" value="B"> c) Mirando algo juntos</label>
+            </li>
+            <li>
+                <p>19. Si no encuentras las llaves en una bolsa</p>
+                <label><input type="radio" name="q19" value="A"> a) La buscas mirando</label>
+                <label><input type="radio" name="q19" value="B"> b) Sacudes la bolsa para oír el ruido</label>
+                <label><input type="radio" name="q19" value="C"> c) Buscas al tacto</label>
+            </li>
+            <li>
+                <p>20. Cuando tratas de recordar algo, ¿cómo lo haces?</p>
+                <label><input type="radio" name="q20" value="A"> a) A través de imágenes</label>
+                <label><input type="radio" name="q20" value="C"> b) A través de emociones</label>
+                <label><input type="radio" name="q20" value="B"> c) A través de sonidos</label>
+            </li>
+            <li>
+                <p>21. Si tuvieras dinero, ¿qué harías?</p>
+                <label><input type="radio" name="q21" value="B"> a) Comprar una casa</label>
+                <label><input type="radio" name="q21" value="C"> b) Viajar y conocer el mundo</label>
+                <label><input type="radio" name="q21" value="A"> c) Adquirir un estudio de grabación</label>
+            </li>
+            <li>
+                <p>22. ¿Con qué frase te identificas más?</p>
+                <label><input type="radio" name="q22" value="C"> a) Reconozco a las personas por su voz</label>
+                <label><input type="radio" name="q22" value="A"> b) No recuerdo el aspecto de la gente</label>
+                <label><input type="radio" name="q22" value="B"> c) Recuerdo el aspecto de alguien, pero no su nombre</label>
+            </li>
+            <li>
+                <p>23. Si tuvieras que quedarte en una isla desierta, ¿qué preferirías llevar contigo?</p>
+                <label><input type="radio" name="q23" value="A"> a) Algunos buenos libros</label>
+                <label><input type="radio" name="q23" value="B"> b) Un radio portátil de alta frecuencia</label>
+                <label><input type="radio" name="q23" value="C"> c) Golosinas y comida enlatada</label>
+            </li>
+            <li>
+                <p>24. ¿Cuál de los siguientes entretenimientos prefieres?</p>
+                <label><input type="radio" name="q24" value="A"> a) Tocar un instrumento musical</label>
+                <label><input type="radio" name="q24" value="B"> b) Sacar fotografías</label>
+                <label><input type="radio" name="q24" value="C"> c) Actividades manuales</label>
+            </li>
+            <li>
+                <p>25. ¿Cómo es tu forma de vestir?</p>
+                <label><input type="radio" name="q25" value="A"> a) Impecable</label>
+                <label><input type="radio" name="q25" value="B"> b) Informal</label>
+                <label><input type="radio" name="q25" value="C"> c) Muy informal</label>
+            </li>
+            <li>
+                <p>26. ¿Cómo es tu forma de vestir?</p>
+                <label><input type="radio" name="q26" value="A"> a) Impecable</label>
+                <label><input type="radio" name="q26" value="B"> b) Informal</label>
+                <label><input type="radio" name="q26" value="C"> c) Muy informal</label>
+            </li>
+
+            <li>
+                <p>27. ¿Qué es lo que más te gusta de una fogata nocturna?</p>
+                <label><input type="radio" name="q27" value="C"> a) El calor del fuego y los bombones asados</label>
+                <label><input type="radio" name="q27" value="B"> b) El sonido del fuego quemando la leña</label>
+                <label><input type="radio" name="q27" value="A"> c) Mirar el fuego y las estrellas</label>
+            </li>
+
+            <li>
+                <p>28. ¿Cómo se te facilita entender algo?</p>
+                <label><input type="radio" name="q28" value="B"> a) Cuando te lo explican verbalmente</label>
+                <label><input type="radio" name="q28" value="C"> b) Cuando utilizan medios visuales</label>
+                <label><input type="radio" name="q28" value="A"> c) Cuando se realiza a través de alguna actividad</label>
+            </li>
+
+            <li>
+                <p>29. ¿Qué te atrae más de una persona?</p>
+                <label><input type="radio" name="q29" value="A"> a) Su trato y forma de ser</label>
+                <label><input type="radio" name="q29" value="B"> b) Su aspecto físico</label>
+                <label><input type="radio" name="q29" value="C"> c) Su conversación</label>
+            </li>
+
+            <li>
+                <p>30. Si pudieras elegir, ¿qué preferirías ser?</p>
+                <label><input type="radio" name="q30" value="C"> a) Un gran médico</label>
+                <label><input type="radio" name="q30" value="B"> b) Un gran músico</label>
+                <label><input type="radio" name="q30" value="A"> c) Un gran pintor</label>
+            </li>
+
+            <li>
+                <p>31. Cuando eliges tu ropa, ¿qué es lo más importante para ti?</p>
+                <label><input type="radio" name="q31" value="A"> a) Que sea adecuada</label>
+                <label><input type="radio" name="q31" value="B"> b) Que luzca bien</label>
+                <label><input type="radio" name="q31" value="C"> c) Que sea cómoda</label>
+            </li>
+
+            <li>
+                <p>32. ¿Qué es lo que más disfrutas de una habitación?</p>
+                <label><input type="radio" name="q32" value="C"> a) Que sea silenciosa</label>
+                <label><input type="radio" name="q32" value="B"> b) Que sea confortable</label>
+                <label><input type="radio" name="q32" value="A"> c) Que esté limpia y ordenada</label>
+            </li>
+
+            <li>
+                <p>33. ¿Qué es más sexy para ti?</p>
+                <label><input type="radio" name="q33" value="A"> a) Una iluminación tenue</label>
+                <label><input type="radio" name="q33" value="C"> b) El perfume</label>
+                <label><input type="radio" name="q33" value="B"> c) Cierto tipo de música</label>
+            </li>
+
+            <li>
+                <p>34. ¿A qué tipo de espectáculo preferirías asistir?</p>
+                <label><input type="radio" name="q34" value="A"> a) A un concierto de música</label>
+                <label><input type="radio" name="q34" value="B"> b) A un espectáculo de magia</label>
+                <label><input type="radio" name="q34" value="C"> c) A una muestra gastronómica</label>
+            </li>
+
+            <li>
+                <p>35. ¿Qué te atrae más de una persona?</p>
+                <label><input type="radio" name="q35" value="A"> a) Su trato y forma de ser</label>
+                <label><input type="radio" name="q35" value="C"> b) Su aspecto físico</label>
+                <label><input type="radio" name="q35" value="B"> c) Su conversación</label>
+            </li>
+
+            <li>
+                <p>36. Cuando vas de compras, ¿en dónde pasas mucho tiempo?</p>
+                <label><input type="radio" name="q36" value="A"> a) En una librería</label>
+                <label><input type="radio" name="q36" value="C"> b) En una perfumería</label>
+                <label><input type="radio" name="q36" value="B"> c) En una tienda de discos</label>
+            </li>
+
+            <li>
+                <p>37. ¿Cuál es tu idea de una noche romántica?</p>
+                <label><input type="radio" name="q37" value="A"> a) A la luz de las velas</label>
+                <label><input type="radio" name="q37" value="B"> b) Con música romántica</label>
+                <label><input type="radio" name="q37" value="C"> c) Bailando tranquilamente</label>
+            </li>
+
+            <li>
+                <p>38. ¿Qué es lo que más disfrutas de viajar?</p>
+                <label><input type="radio" name="q38" value="B"> a) Conocer personas y hacer nuevos amigos</label>
+                <label><input type="radio" name="q38" value="C"> b) Conocer lugares nuevos</label>
+                <label><input type="radio" name="q38" value="A"> c) Aprender sobre otras costumbres</label>
+            </li>
+
+            <li>
+                <p>39. Cuando estás en la ciudad, ¿qué es lo que más hechas de menos del campo?</p>
+                <label><input type="radio" name="q39" value="B"> a) El aire limpio y refrescante</label>
+                <label><input type="radio" name="q39" value="C"> b) Los paisajes</label>
+                <label><input type="radio" name="q39" value="A"> c) La tranquilidad</label>
+            </li>
+
+            <li>
+                <p>40. Si te ofrecieran uno de los siguientes empleos, ¿cuál elegirías?</p>
+                <label><input type="radio" name="q40" value="C"> a) Director de una estación de radio</label>
+                <label><input type="radio" name="q40" value="A"> b) Director de un club deportivo</label>
+                <label><input type="radio" name="q40" value="B"> c) Director de una revista</label>
+            </li>
+        </ol>
+        <div class="text-center">
+            <button class="btn btn-primary" onclick="calcularResultados()">Calcular Resultados</button>
+        </div>
+    </form>
+</div>
+
+<!-- Resultados -->
+<div class="container mt-4">
+    <h2>Resultados</h2>
+    <div id="resultados"></div>
+</div>
+
+<script>
+    function calcularResultados() {
+    // Obtener las respuestas
+    var respuestas = [];
+    for (var i = 1; i <= 40; i++) {
+        var pregunta = document.querySelector('input[name="q' + i + '"]:checked');
+        if (pregunta) {
+            respuestas.push(pregunta.value);
+        }
+    }
+
+    // Sumar las respuestas por canal perceptual
+    var visual = 0;
+    var auditivo = 0;
+    var cinestesico = 0;
+    for (var j = 0; j < respuestas.length; j++) {
+        if (respuestas[j] === "A") {
+            visual++;
+        } else if (respuestas[j] === "B") {
+            auditivo++;
+        } else if (respuestas[j] === "C") {
+            cinestesico++;
+        }
+    }
+
+    // Mostrar los resultados
+    var resultadosDiv = document.getElementById("resultados");
+    resultadosDiv.innerHTML = "Resultados:<br>Visual: " + visual + "<br>Auditivo: " + auditivo + "<br>Cinestésico: " + cinestesico;
+
+    // Enviar los resultados al servidor
+    var data = {
+        visual: visual,
+        auditivo: auditivo,
+        cinestesico: cinestesico
+    };
+
+    fetch('procesar_resultados.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Manejar la respuesta del servidor (por ejemplo, mostrar un mensaje al usuario)
+        alert(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+</script>
+</body>
+</html>

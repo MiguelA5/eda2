@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+        }
+        .card {
+            text-align: center;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            width: 400px; /* Ancho de la tarjeta */
+        }
+        .card-header {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .btn-primary {
+            background-color: #007BFF;
+            border: none;
+        }
+        .card-body {
+            font-size: 1.25rem;
+        }
+        .profile-details p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <?php
+    // Reemplaza esto con la lógica para recuperar los datos del usuario desde la base de datos
+    $nombreUsuario = "Juan Pérez";
+    $correo = "juan@example.com";
+    $fechaNacimiento = "1990-01-15";
+    $sexo = "M";
+    $foto = "ruta_de_la_foto.jpg";
+    ?>
+
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Editar Perfil</h1>
+                </div>
+                <div class="card-body">
+                    <form action="guardar_perfil.php" method="post">
+                        <div style="margin-bottom: 20px;">
+                            <img src="<?php echo $foto; ?>" alt="Foto de Perfil" width="150" height="150">
+                        </div>
+                        <div class="profile-details">
+                            <h5 class="card-title">Nombre de Usuario:</h5>
+                            <input type="text" name="nombreUsuario" value="<?php echo $nombreUsuario; ?>">
+                            <h5 class="card-title">Correo Electrónico:</h5>
+                            <input type="text" name="correo" value="<?php echo $correo; ?>">
+                            <h5 class="card-title">Fecha de Nacimiento:</h5>
+                            <input type="date" name="fechaNacimiento" value="<?php echo $fechaNacimiento; ?>">
+                            <h5 class="card-title">Sexo:</h5>
+                            <select name="sexo">
+                                <option value="M" <?php echo $sexo === 'M' ? 'selected' : ''; ?>>Masculino</option>
+                                <option value="F" <?php echo $sexo === 'F' ? 'selected' : ''; ?>>Femenino</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <a href="perfil.html" class="btn btn-primary">Volver a Perfil</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

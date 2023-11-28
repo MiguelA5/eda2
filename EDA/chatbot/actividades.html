@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Estilos y encabezado -->
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 mb-4">Actividades Almacenadas</h1>
+        <ul>
+            {% for actividad in actividades %}
+            <li>{{ actividad.activity }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
